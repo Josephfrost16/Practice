@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-12 col-sm-4 mt-2 mb-2">
+    <a href="/Cine/Home" class="btn btn-warning">Back to home</a>
+    </div>
+</div>
+
+{{#if hasSerie}}
+
+  <div class="col-12 offset-4 col-sm-4 mb-3 ">
+
+    <h2 class="card-title mb-3">{{serie.Nombre}}</h2>
+    <div>
+        <iframe src="{{serie.VidUrl}}" width="420" height="320"></iframe>
+    </div>
+  </div>
+{{/if}}
+

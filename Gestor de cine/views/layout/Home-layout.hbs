@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/Bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <title>{title}</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-dark border-bottom border body ">
+        <div class="container-fluid d-flex justify-content-between ">
+            <div class="d-flex">
+                <a class="navbar-brand text-light me-4" href="/Cine/Home">Home</a>
+                <a class="navbar-brand text-light me-4" href="/Admin/Series-List"> Series</a>
+                <a class="navbar-brand text-light me-4" href="/Admin/Generos-List">Generos</a>
+            </div>
+                <form class="d-flex flex-grow-1 " action="/Cine/Filtered-series" method="post">
+                    <input class="form-control me-3 ms-5 " name="busqueda" type="text" placeholder="Search your series" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>            
+        </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        {{{body}}}
+    </main>
+
+    <footer></footer>
+</body>
+<script src="/assets/js/Bootstrap/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{{#if IsList}}
+    <script src="/assets/js/main.js"></script>
+{{/if}}
+</html>
