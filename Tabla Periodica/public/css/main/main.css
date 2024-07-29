@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .tabla_periodica {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(10, auto);
+    gap: 1px;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: white;
+    padding: 10px;
+  }
+  
+  .elemento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid #aeaeae;
+    height: 60px;
+    font-size: 20px;
+    color: #000000;
+  }
+  .elemento:hover{
+    transform: scale(1.2);
+    border-radius: 8px;
+    user-select:text;
+    z-index: 10;
+    box-shadow: 0px 0px 30px -8px rgb(255, 255, 255);
+}
+  /* Clases de colores según el grupo */
+  .grupo-GasesNobles {
+    background-color: #99e9ffaa;
+  }
+  
+  .grupo-Metales {
+    background-color: #b8b8b8e3;
+  }
+  
+  .grupo-NoMetales {
+    background-color: blueviolet;
+  }
+  
+  .grupo-Alcalinos {
+    background-color: rgba(0, 255, 255, 0.841);
+  }
+  
+  .grupo-Metaloides {
+    background-color: rgba(255, 255, 0, 0.719);
+  }
+  
+  .grupo-Actínidos {
+    background-color: rgba(255, 85, 0, 0.603);
+  }
+  
+  .grupo-OtrosMetales {
+    background-color: rgba(128, 255, 128, 0.719);
+  }
+  
+  .grupo-Lantánidos {
+    background-color: rgba(251, 255, 0, 0.478);
+  }
+  
+  .grupo-Alcalinoterreos {
+    background-color: rgba(255, 165, 0, 0.719);
+  }
+  
+  .grupo-Halógenos {
+    background-color: rgb(226, 43, 205);
+  }
+  
+  .leyenda {
+    width: 50%;
+    border: 2px solid black;
+    padding: 10px;
+  }
+  
+  .recuadro {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .purple {
+    background-color: rgba(137, 43, 226, 0.719);
+  }
+  
+  .neon {
+    background-color: rgba(0, 255, 255, 0.841);
+  }
+  
+  .violeta {
+    background-color: rgb(226, 43, 205);
+  }
+  
+  .verde_claro {
+    background-color: rgba(128, 255, 128, 0.719);
+  }
+  
+  .amarillo {
+    background-color: rgba(255, 255, 0, 0.719);
+  }
+  
+  .naranja {
+    background-color: rgba(255, 165, 0, 0.719);
+  }
+  
+  .amarillo_claro {
+    background-color: rgba(251, 255, 0, 0.478);
+  }
+  
+  .naranja_rojizo {
+    background-color: rgba(255, 85, 0, 0.603);
+  }
+  
