@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main/main.css">
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="flex col mb-4">
+        <h2>Leyenda:</h2>
+        <div class="leyenda">
+            <div class="legend-item"><span class="recuadro neon"></span> Metal alcalino</div>
+            <div class="legend-item"><span class="recuadro grupo-GasesNobles"></span> Gases nobles</div>
+            <div class="legend-item"><span class="recuadro naranja"></span> Metal alcalinotérreo</div>
+            <div class="legend-item"><span class="recuadro amarillo"></span> Metaloide</div>
+            <div class="legend-item"><span class="recuadro purple"></span> No metales</div>
+            <div class="legend-item"><span class="recuadro violeta"></span> Halógeno</div>
+            <div class="legend-item"><span class="recuadro grupo-Metales"></span> Metales</div>
+            <div class="legend-item"><span class="recuadro amarillo_claro"></span> Lantánido</div>
+            <div class="legend-item"><span class="recuadro naranja_rojizo"></span> Actínido</div>
+            <div class="legend-item"><span class="recuadro grupo-OtrosMetales"></span> Otros Metales</div>
+        </div>
+        <div class="flex col offset-2">
+            <form action="/delete" method="post">
+            <Label for="Eliminado">Element</Label>
+            <input name="EliminadoName" type="text" id="Eliminado" placeholder="Elemento a eliminar:">
+                <button type="submit" class="btn btn-danger mt-2" onclick="{{Delete}}">Delete Element</button>     
+            </form>
+        </div>
+    </div>
+    
+  <main class="container">
+        <div class="tabla_periodica">
+            {{#each Elementos}}
+                {{#if this}}
+                    <div class="elemento card me-1 {{getGrupo this.grupo}}" style="grid-column: {{this.column}}; grid-row: {{this.row}};">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.symbol}}</h5>
+                        </div>
+                    </div>
+                {{/if}}
+            {{/each}}
+        </div>
+    </main>
+
+</body>
+</html>
