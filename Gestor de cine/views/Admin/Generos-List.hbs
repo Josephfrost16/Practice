@@ -1,0 +1,32 @@
+<a  class=" btn btn-success mt-3 mb-3 ms-2" href="/Admin/add-generos">
+    Add Generos
+</a>
+
+<h2 class="offset-4 fs-1 mb-5 ">Listado de Generos</h2>
+
+{{#if hasGeneros}}
+<div class=" d-flex row">
+  {{#each generos}}
+
+  <div class="col-12 col-sm-4 mb-3  ">
+    <div class="card container" style="width: 18rem;">
+      <div class="card-body row ">
+         <h5 class="card-title">{{this.Nombre}}</h5>
+         <div class="d-flex col">
+          <div class="me-2">
+          <a href="/Admin/edit-generos/{{this.Id}}" class="btn btn-warning btn-sm">Edit</a>
+        </div>
+        <div>
+          <form method="post" action="/Admin/Delete-Genero" class="form-delete">
+            <input type="hidden" value="{{this.Id}}" name="GeneroId">
+            <button type="submit"  class="btn btn-danger btn-sm delete-Generos">Delete</button>
+        </form>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+  {{/each}}
+</div>
+
+{{/if}}
