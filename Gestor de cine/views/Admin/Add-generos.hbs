@@ -1,0 +1,30 @@
+<div class="border border-primary p-4 rounded mt-2">
+    <h2>Series creation</h2>
+<div class="card-body">
+    <form method="POST" action="/Admin/{{#if EditMode}}edit-generos {{else}}add-generos{{/if}}">
+    {{#if EditMode}}
+         <div class="card-body">
+            <label for="Nombre" class="form-label" >Nombre:</label>
+            <input id="Nombre" name="Nombre"value="{{genero.Nombre}}" class="form-control mb-3 shadow-sm" type="text">
+        </div>
+
+        <input type="hidden" name="Id" value="{{genero.Id}}">
+        {{else}}
+            <div class="card-body">
+                <label for="Nombre" class="form-label" >Nombre:</label>
+                <input id="Nombre" name="Nombre" class="form-control mb-3 shadow-sm" type="text">
+            </div>
+
+             <ul class="list-group mb-3">
+            <li class="list-group-item active"> Generos</li>
+            {{#each generos}}
+                <li class="list-group-item">{{this.Nombre}}</li>
+            {{/each}}
+        </ul>      
+    {{/if}}
+       
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="/Cine/home" class="btn btn-primary">Back to Home</a>
+    </form>
+</div>
+</div>

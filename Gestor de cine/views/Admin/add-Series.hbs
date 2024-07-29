@@ -1,0 +1,48 @@
+<div class="border border-primary p-4 rounded mt-2">
+    <h2>Series creation</h2>
+<div class="card-body">
+    <form method="POST" action="/Admin/{{#if EditMode}}edit-Serie{{else}}add-Series{{/if}}">
+        <div class="card-body">
+            <label for="Nombre" class="form-label" >Nombre:</label>
+            <input id="Nombre" name="Nombre"  required {{#if EditMode}}value="{{serie.Nombre}}" {{/if}} class="form-control mb-3 shadow-sm" type="text">
+
+            <label for="Genero" class="form-label" >Genero:</label>
+            <select name="Genero" id="Genero" class="form-select mb-4 shadow-sm">
+                {{#if EditMode}}
+                    {{#each generos}}
+                        {{#if (comparison this.Id ../serie.Genero)}}
+                                <option>{{this.Nombre}}</option>
+                        {{/if}}
+                        {{else}}
+                            <option selected>{{serie.Genero}}</option>
+                    {{/each}}
+
+                    {{else}}
+                        <option selected>Selecciona un genero</option>
+                         {{#each generos}}
+                            <option>{{this.Nombre}}</option>
+                        {{/each}}
+                {{/if}}
+            </select>            
+
+            <label for="ImgUrl" class="form-label" >Url de Imagen:</label>
+            <input id="ImgUrl" name="ImgUrl" required {{#if EditMode}}value="{{serie.ImgUrl}}" {{/if}} class="form-control mb-3 shadow-sm" type="url">
+
+            <label for="Descripcion" class="form-label" >Descripcion:</label>
+            <textarea  name="Descripcion" id="Descripcion" required class="form-control mb-3 shadow-sm">
+                {{#if EditMode}}{{serie.Descripcion}} {{/if}}
+            </textarea>
+
+            <label for="VidUrl" class="form-label" >Url de Youtube:</label>
+            <input id="VidUrl" name="VidUrl" required {{#if EditMode}}value="{{serie.VidUrl}}" {{/if}} class="form-control mb-3 shadow-sm" type="text">
+            
+            {{#if EditMode}}
+                 <input type="hidden" name="Id" value="{{serie.Id}}">
+            {{/if}}
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="/Cine/home" class="btn btn-primary">Back to Home</a>
+    </form>
+</div>
+</div>

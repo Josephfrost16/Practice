@@ -1,0 +1,35 @@
+<a  class=" btn btn-success mt-3 mb-3" href="/Admin/add-Series">
+    Add Series
+</a>
+
+{{#if hasSeries}}
+<div class="row">
+  {{#each series}}
+
+  <div class="col-12 col-sm-4 mb-3 ">
+    <div class="card imagen-container" style="width: 18rem;">
+
+      <img src="{{this.ImgUrl}}" class="card-img-top" alt="..." />
+      <div class="card-body row">
+         <h5 class="card-title">{{this.Nombre}}</h5>
+         <p>{{this.Descripcion}}</p>
+         <div class="d-flex col">
+          <div class="me-2">
+          <a href="/Admin/edit-Serie/{{this.Id}}" class="btn btn-warning btn-sm">Edit</a>
+        </div>
+        <div>
+          <form method="post" action="/Admin/Delete-Serie" class="form-delete">
+            <input type="hidden" value="{{this.Id}}" name="serieId">
+            <button type="submit"  class="btn btn-danger btn-sm delete-series">Delete</button>
+        </form>
+        
+         </div>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+   
+  {{/each}}
+  </div>
+{{/if}}

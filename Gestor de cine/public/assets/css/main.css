@@ -1,0 +1,19 @@
+.imagen-container{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.imagen-container img{
+    width: 100%;
+    max-width: 500px;
+}
+.container{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container.containerG{
+    width: 100%;
+    max-width: 100px;
+}
